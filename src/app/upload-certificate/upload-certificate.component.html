@@ -1,1 +1,42 @@
-<p>upload-certificate works!</p>
+  <div class="container ">
+    <div class="card bg-light text-center justify-content-center">
+      <h1 class="form-group text-center card-header"> Upload Certificate</h1>
+<br>
+      <hr>
+      <form name="uploadForm" class="card-text col-sm-auto container-fluid"style="max-width: 400px;" [formGroup]="uploadForm"
+            (ngSubmit)="uploadFile()">
+        <div class="form-group">
+          <input id="uploadFile" name="uploadFile" class="form-control"
+                 type="file" style="padding-bottom: 40px; cursor: pointer;">
+        </div>
+
+        <div class="form-group">
+          <label class="lead">Description</label>
+          <textarea formControlName="certificateDescription" class="form-control col-sm-auto "
+                    [(ngModel)]="certificate.certificateDescription"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="lead">Date</label>
+          <input formControlName="Data" class="form-control" type="text"
+                 pattern="(?:19|20)(?:(?:[13579][26]|[02468][048])-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))|(?:[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:29|30))|(?:(?:0[13578]|1[02])-31)))"
+                 [(ngModel)]="certificate.certificateData">
+        </div>
+        <div class="form-group">
+          <label for="organizationSelect" class="lead">Choose Organization</label>
+          <br>
+          <select class="form-control custom-select"
+                  id="organizationSelect" name="organizationSelect"
+                  formControlName="organizationSelect">
+            <option selected>Choose...</option>
+            <option *ngFor="let organization of organization">{{organization.organizationName}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-outline-info"><i
+            class="fa fa-upload"></i> Upload
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

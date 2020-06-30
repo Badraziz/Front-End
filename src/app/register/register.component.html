@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Create Account</h4>
+
+      <div class="form-check-inline">
+        <label class="form-check-label"><input type="radio" class="form-check-input" id="org" name="radio">Individual</label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label"><input type="radio" class="form-check-input" id="user"  name="radio">Organization</label>
+      </div>
+<hr>
+      <form name="form" [formGroup]="registerForm" (ngSubmit)="addUser()" >
+        <div class="form-group input-group" >
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input formControlName="fullName"
+                 class="form-control"
+                 placeholder="Full name"
+                 type="text"
+                 [(ngModel)]="user.fullName">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+          <input formControlName="email"
+                 class="form-control"
+                 placeholder="Email address"
+                 type="email"
+                 [(ngModel)]="user.email">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <input
+            formControlName="phoneNumber"
+            class="form-control"
+            placeholder="Phone number"
+            type="text"
+            [(ngModel)]="user.phoneNumber">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <input
+            formControlName="nationalId"
+            class="form-control"
+            placeholder="National ID"
+            type="text"
+          [(ngModel)]="user.nationalId">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <input formControlName="dateOfBirth" class="form-control" placeholder="Date Of Birth" type="date"
+                 [(ngModel)]="user.dateOfBirth">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input formControlName="password"
+                   class="form-control" placeholder="Create password" type="password" [(ngModel)]="user.password">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Repeat password" type="password">
+        </div> <!-- form-group// -->
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+        </div> <!-- form-group// -->
+
+
+        <a routerLink="/login" style="text-decoration: none;">
+         <p class="border-bottom">Already Registered? Login here </p></a>
+      </form>
+    </article>
+  </div> <!-- card.// -->
+
+</div>
+<!--container end.//-->
+

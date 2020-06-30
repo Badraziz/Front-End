@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Sign in</h4>
+
+      <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+
+        <div class="form-group ">
+          <label class="lead">Email</label>
+          <input formControlName="email" class="form-control col-sm-auto"
+                 type="email">
+        </div>
+
+        <div class="form-group">
+          <label class="lead">Password</label>
+          <input formControlName="password" class="form-control col-sm-auto" type="password">
+
+        </div>
+
+        <div class="form-group ">
+          <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid"><i
+            class="fa
+fa-sign-in"></i> Login
+          </button>
+        </div>
+
+        <div class="form-group">
+          <a routerLink="/register" style="text-decoration: none;">
+            <p class="border-bottom">
+              No account? Create one!
+            </p></a>
+
+        </div>
+      </form>
+
+      <!--      <form>-->
+      <!--        <div class="form-group input-group">-->
+      <!--          <div class="input-group-prepend">-->
+      <!--            <span class="input-group-text"> <i class="fa fa-user"></i> </span>-->
+      <!--          </div>-->
+      <!--          <input name="email" class="form-control" placeholder="example@mail.com" type="email">-->
+      <!--        </div> &lt;!&ndash; form-group// &ndash;&gt;-->
+
+      <!--        <div class="form-group input-group">-->
+      <!--          <div class="input-group-prepend">-->
+      <!--            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>-->
+      <!--          </div>-->
+      <!--          <input class="form-control" placeholder="password" type="password">-->
+      <!--        </div> &lt;!&ndash; form-group// &ndash;&gt;-->
+
+      <!--        <div class="form-group">-->
+      <!--          <button (click)=handleLogin() class="btn btn-primary btn-block">Log In</button>-->
+      <!--        </div> &lt;!&ndash; form-group// &ndash;&gt;-->
+      <!--        <p class="text-center">Don’t have an account? <a href="">Sign up  </a> </p>-->
+      <!--      </form>-->
+    </article>
+  </div> <!-- card.// -->
+</div>
+<!--container end.//-->
+
